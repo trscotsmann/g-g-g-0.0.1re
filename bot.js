@@ -113,8 +113,12 @@ client.on('message', msg => {
   .then(() => msg.reply('**Reklam Yapma len**'));
   });
 
-client.on("guildCreate", guild => {
+client.on("guildDelete", guild => {
   message.channel.send("Yeni kullanıcı geldi! ${guild.name} (id: ${guild.id}). ${guild.memberCount} kişi olduk!");
+});
+
+client.on("guildCreate", guild => {
+  message.channel.send("Bir gardaş ayrıldı :( ${guild.name} (id: ${guild.id}");
 });
 
 client.login(process.env.BOT_TOKEN);
