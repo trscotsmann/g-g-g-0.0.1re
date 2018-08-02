@@ -108,4 +108,9 @@ client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
 
+client.on('message', msg => {
+  if (/(https?:\/\/)?(www\.)?(discord\.(gg|li|me|io)|discordapp\.com\/invite)\/.+/.test(msg.content)) return msg.delete()
+  .then(() => msg.reply('**Reklam Yapmamalisin**'));
+  });
+
 client.login(process.env.BOT_TOKEN);
