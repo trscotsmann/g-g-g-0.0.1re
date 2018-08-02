@@ -25,11 +25,11 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: [],
-  permLevel: 3
+  permLevel: 2
 };
 
 exports.help = {
   name: 'anket',
-  description: 'Belirlenen miktar mesajı siler.',
+  description: 'Anket başlatır.',
   usage: 'anket <soru>'
 };
