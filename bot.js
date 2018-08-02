@@ -110,7 +110,11 @@ client.on('error', e => {
 
 client.on('message', msg => {
   if (/(https?:\/\/)?(www\.)?(discord\.(gg|li|me|io)|discordapp\.com\/invite)\/.+/.test(msg.content)) return msg.delete()
-  .then(() => msg.reply('**Reklam Yapmamalisin**'));
+  .then(() => msg.reply('**Reklam Yapma len**'));
   });
+
+client.on("guildCreate", guild => {
+  message.channel.send("Yeni kullanıcı geldi! ${guild.name} (id: ${guild.id}). ${guild.memberCount} kişi olduk!");
+});
 
 client.login(process.env.BOT_TOKEN);
